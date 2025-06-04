@@ -1,0 +1,6 @@
+{
+  "games": [
+    { "name": "Jeu1", "executable": "Chemin/vers/jeu1.exe" },
+    { "name": "Jeu2", "executable": "Chemin/vers/jeu2.exe" }
+  ]
+}

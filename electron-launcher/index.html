@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon Launcher</title>
+  <style>
+    body { font-family: sans-serif; }
+    #games { list-style: none; padding: 0; }
+    button { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Mes Jeux</h1>
+  <ul id="games"></ul>
+  <script>
+    const gameListElem = document.getElementById('games');
+    const games = window.launcher.loadGames();
+
+    games.forEach((game, index) => {
+      const li = document.createElement('li');
+      li.textContent = game.name;
+      const btn = document.createElement('button');
+      btn.textContent = 'Lancer';
+      btn.onclick = () => window.launcher.launchGame(game.executable);
+      li.appendChild(btn);
+      gameListElem.appendChild(li);
+    });
+  </script>
+</body>
+</html>
